@@ -1,0 +1,929 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ANGELS | The Supermodel Edit</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #100d0e;
+      --dark: #191315;
+      --burgundy: #681b32;
+      --rose: #c88a91;
+      --pink: #e8bdc4;
+      --gold: #d6b77b;
+      --cream: #f8f1ed;
+      --muted: #b9a7a8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      background: rgba(16, 13, 14, 0.96);
+      border-bottom: 1px solid #ffffff12;
+      padding: 16px 0;
+    }
+
+    .brand {
+      color: var(--pink);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      letter-spacing: 5px;
+      font-weight: 700;
+    }
+
+    .brand:hover {
+      color: white;
+    }
+
+    .nav-link {
+      color: #e8dfe0;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-left: 15px;
+    }
+
+    .nav-link:hover {
+      color: var(--gold);
+    }
+
+    .navbar-toggler {
+      border-color: #c88a9166;
+    }
+
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 580px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 100%, #681b3266, transparent 55%),
+        radial-gradient(ellipse at 10% 0%, #c88a9120, transparent 45%),
+        linear-gradient(145deg, #21171a, #100d0e 65%);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border: 1px solid #d6b77b30;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      top: -180px;
+      left: -100px;
+    }
+
+    .hero::after {
+      right: -130px;
+      bottom: -210px;
+      width: 450px;
+      height: 450px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 5px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.3rem, 10vw, 7.5rem);
+      line-height: 1.04;
+      margin: 24px 0;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--pink);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero p {
+      color: #c7b7b8;
+      max-width: 550px;
+      line-height: 1.9;
+      margin: 0 auto 30px;
+      font-size: 0.95rem;
+    }
+
+    .gold-button {
+      display: inline-block;
+      padding: 14px 30px;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+
+    .gold-button:hover {
+      background: white;
+      color: var(--black);
+      transform: translateY(-3px);
+    }
+
+    .outline-button {
+      display: inline-block;
+      padding: 13px 25px;
+      border: 1px solid #d6b77b80;
+      color: var(--pink);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+
+    .outline-button:hover {
+      color: white;
+      background: #ffffff0d;
+    }
+
+    /* STATS */
+
+    .stats-section {
+      background: var(--burgundy);
+      padding: 35px 0;
+      border-top: 1px solid #d6b77b33;
+      border-bottom: 1px solid #d6b77b33;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 12px;
+    }
+
+    .stat-number {
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+    }
+
+    .stat-label {
+      color: #e9cfd4;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.68rem;
+      margin-top: 4px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-size: 0.7rem;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 15px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    /* MODEL GALLERY */
+
+    .gallery-section {
+      background:
+        radial-gradient(ellipse at 90% 10%, #681b321c, transparent 40%),
+        var(--black);
+    }
+
+    .search-input {
+      width: 100%;
+      max-width: 390px;
+      background: #ffffff08;
+      border: 1px solid #d6b77b55;
+      padding: 14px 20px;
+      color: white;
+      outline: none;
+      border-radius: 0;
+      font-size: 0.85rem;
+    }
+
+    .search-input::placeholder {
+      color: #a99699;
+    }
+
+    .search-input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px #d6b77b12;
+    }
+
+    .model-card {
+      height: 100%;
+      background: var(--dark);
+      border: 1px solid #ffffff12;
+      transition: transform 0.35s, border-color 0.35s;
+      overflow: hidden;
+    }
+
+    .model-card:hover {
+      transform: translateY(-7px);
+      border-color: #d6b77b77;
+    }
+
+    .model-image {
+      position: relative;
+      height: 350px;
+      overflow: hidden;
+      background: linear-gradient(150deg, #4b2631, #1a1215);
+    }
+
+    .model-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.6s;
+    }
+
+    .model-card:hover .model-image img {
+      transform: scale(1.06);
+    }
+
+    .model-number {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      color: white;
+      background: #100d0ec9;
+      padding: 7px 11px;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+    }
+
+    .model-tag {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      background: var(--gold);
+      color: var(--black);
+      padding: 7px 12px;
+      font-size: 0.63rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .model-info {
+      padding: 22px;
+    }
+
+    .model-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.65rem;
+      margin-bottom: 6px;
+    }
+
+    .model-years {
+      font-size: 0.75rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .model-bio {
+      color: var(--muted);
+      font-size: 0.83rem;
+      line-height: 1.8;
+      min-height: 74px;
+    }
+
+    .model-footer {
+      padding-top: 15px;
+      border-top: 1px solid #ffffff14;
+      color: var(--pink);
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* FEATURE */
+
+    .feature-section {
+      background: #211619;
+      border-top: 1px solid #ffffff0b;
+      border-bottom: 1px solid #ffffff0b;
+    }
+
+    .feature-card {
+      height: 100%;
+      border: 1px solid #d6b77b30;
+      background: #100d0e55;
+      padding: 30px;
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      border-color: var(--gold);
+      background: #ffffff05;
+    }
+
+    .feature-symbol {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .feature-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.9;
+      margin: 0;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 45px 15px;
+      text-align: center;
+      background: #0b090a;
+      border-top: 1px solid #d6b77b30;
+    }
+
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 5px;
+      font-size: 1.5rem;
+      color: var(--pink);
+    }
+
+    footer p {
+      margin-top: 15px;
+      color: #9c898d;
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+
+    .footer-line {
+      width: 55px;
+      height: 1px;
+      background: var(--gold);
+      margin: 20px auto;
+    }
+
+    .empty-state {
+      padding: 55px 20px;
+      border: 1px solid #d6b77b33;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        min-height: 510px;
+        padding: 80px 18px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .model-image {
+        height: 390px;
+      }
+
+      .nav-link {
+        margin: 5px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+
+      <a class="navbar-brand brand" href="#home">
+        ANGELS
+      </a>
+
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+        aria-controls="navMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#models">The Models</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#runway">Runway Edit</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        The Iconic Supermodel Archive
+      </div>
+
+      <h1>
+        Born to Walk.
+        <span>Made to Shine.</span>
+      </h1>
+
+      <p>
+        Celebrating the legendary women who transformed the runway
+        into a stage of confidence, glamour, and unforgettable fashion.
+        Welcome to your ultimate supermodel edit.
+      </p>
+
+      <a href="#models" class="gold-button">
+        Explore the Angels
+      </a>
+
+      <a href="#runway" class="outline-button ms-2">
+        The Runway Edit
+      </a>
+
+    </div>
+  </header>
+
+  <!-- STATISTICS -->
+  <section class="stats-section" id="runway">
+    <div class="container">
+      <div class="row g-3" id="statistics"></div>
+    </div>
+  </section>
+
+  <!-- MODEL GALLERY -->
+  <main class="section gallery-section" id="models">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <div class="section-kicker">The Faces of Fashion</div>
+
+        <h2 class="section-title">
+          Meet the Supermodels
+        </h2>
+
+        <p class="section-description">
+          Icons, legends, and unforgettable runway moments.
+          <br>
+          Discover the women behind the wings.
+        </p>
+
+        <div class="mt-4">
+          <input type="search"
+            class="search-input"
+            id="searchInput"
+            placeholder="Search a model's name..."
+            aria-label="Search supermodels">
+        </div>
+
+        <div class="mt-3">
+          <span id="resultCount"
+            style="color: var(--gold); font-size: 0.75rem; letter-spacing: 2px;">
+          </span>
+        </div>
+      </div>
+
+      <div class="row g-4" id="parent"></div>
+
+    </div>
+  </main>
+
+  <!-- EDITORIAL FEATURES -->
+  <section class="section feature-section" id="about">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <div class="section-kicker">Beyond the Catwalk</div>
+
+        <h2 class="section-title">
+          The Runway Edit
+        </h2>
+
+        <p class="section-description">
+          More than fashion. It's a legacy.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-4">
+          <article class="feature-card">
+            <div class="feature-symbol">01</div>
+
+            <h3>The Runway</h3>
+
+            <p>
+              From dramatic entrances to iconic wings,
+              explore the spectacle and artistry of the
+              Victoria's Secret Fashion Show.
+            </p>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <article class="feature-card">
+            <div class="feature-symbol">02</div>
+
+            <h3>The Icons</h3>
+
+            <p>
+              Discover the supermodels whose presence,
+              personality, and careers helped shape
+              an era of fashion and pop culture.
+            </p>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <article class="feature-card">
+            <div class="feature-symbol">03</div>
+
+            <h3>The Glamour</h3>
+
+            <p>
+              Couture-inspired looks, sparkling details,
+              statement styling, and the unforgettable
+              magic of a runway production.
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">ANGELS</div>
+
+    <div class="footer-line"></div>
+
+    <p>
+      A fan-made supermodel gallery celebrating runway fashion.
+      <br>
+      Not affiliated with or endorsed by Victoria's Secret.
+    </p>
+
+    <p id="copyright"></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Supermodel information
+    // Portraits load from Unsplash's image service.
+    // Replace image URLs with verified model portraits
+    // if you want exact photographs of each model.
+
+    var people = [
+      {
+        firstName: "Adriana",
+        lastName: "Lima",
+        years: "1999–2018",
+        title: "The Icon",
+        category: "Runway Legend",
+        description:
+          "Known for her powerful runway walk and long-standing place in Victoria's Secret history.",
+        image:
+          "https://i.pinimg.com/1200x/7d/f8/52/7df852f6b85fa267660b1e3e7eb9a348.jpg"
+      },
+      {
+        firstName: "Tyra",
+        lastName: "Banks",
+        years: "1997–2005",
+        title: "The Trailblazer",
+        category: "Fashion Pioneer",
+        description:
+          "A groundbreaking model and television personality who helped define the Angels era.",
+        image:
+          "https://i.pinimg.com/1200x/ca/b7/3f/cab73f9f0722223b7f11cdbebc2598ab.jpg"
+      },
+      {
+        firstName: "Gisele",
+        lastName: "Bündchen",
+        years: "1999–2006",
+        title: "The Supermodel",
+        category: "Runway Royalty",
+        description:
+          "An internationally recognized supermodel celebrated for her distinctive runway presence.",
+        image:
+          "https://i.pinimg.com/1200x/42/95/af/4295af9f34f36f1712aea259eb325a34.jpg"
+      },
+      {
+        firstName: "Heidi",
+        lastName: "Klum",
+        years: "1999–2010",
+        title: "The Showstopper",
+        category: "Fashion Icon",
+        description:
+          "A familiar face of the Angels era, known for her charismatic personality and fashion career.",
+        image:
+          "https://i.pinimg.com/736x/2f/97/e7/2f97e7ce13bff0ec94ddcd80fbd1c743.jpg"
+      },
+      {
+        firstName: "Candice",
+        lastName: "Swanepoel",
+        years: "2007–present",
+        title: "The Angel",
+        category: "Runway Star",
+        description:
+          "Known for elegant runway appearances and her association with the iconic Angel wings.",
+        image:
+          "https://i.pinimg.com/736x/40/fa/5e/40fa5eee057616907a66ff4d3dd3baa0.jpg"
+      },
+      {
+        firstName: "Alessandra",
+        lastName: "Ambrosio",
+        years: "2000–2017",
+        title: "The Dream Girl",
+        category: "Runway Legend",
+        description:
+          "A celebrated model remembered for her years on the runway and signature fashion-show looks.",
+        image:
+          "https://i.pinimg.com/736x/3f/a8/6a/3fa86a93c6b690aec4302e94e98eaec9.jpg"
+      },
+      {
+        firstName: "Miranda",
+        lastName: "Kerr",
+        years: "2007–2013",
+        title: "The Sweetheart",
+        category: "Fashion Icon",
+        description:
+          "An internationally known model whose graceful style became part of the Angels story.",
+        image:
+          "https://i.pinimg.com/1200x/67/e7/dc/67e7dc7d1aaa7447940ccd3352ce55ec.jpg"
+      },
+      {
+        firstName: "Behati",
+        lastName: "Prinsloo",
+        years: "2007–2018",
+        title: "The Rockstar",
+        category: "Runway Star",
+        description:
+          "Known for her playful personality and confident presence in Victoria's Secret shows.",
+        image:
+          "https://i.pinimg.com/1200x/99/61/71/9961717e9b82f0297a047b5bbce7abad.jpg"
+      },
+      {
+        firstName: "Taylor",
+        lastName: "Hill",
+        years: "2014–present",
+        title: "The Modern Muse",
+        category: "Modern Angel",
+        description:
+          "A modern runway personality recognized for her work in fashion campaigns and shows.",
+        image:
+          "https://i.pinimg.com/1200x/12/e0/18/12e0187904c981b2de990066d13c2f8c.jpg"
+      }
+    ];
+
+    var parent = document.getElementById("parent");
+    var statistics = document.getElementById("statistics");
+    var searchInput = document.getElementById("searchInput");
+    var resultCount = document.getElementById("resultCount");
+
+    // Build the statistics using the actual array
+    function renderStatistics() {
+      var stats = [
+        {
+          number: people.length,
+          label: "Featured Models"
+        },
+        {
+          number: "1995",
+          label: "Fashion Show Origins"
+        },
+        {
+          number: "ANGELS",
+          label: "An Iconic Legacy"
+        }
+      ];
+
+      statistics.innerHTML = stats.map(function(stat) {
+        return `
+          <div class="col-12 col-sm-4">
+            <div class="stat-item">
+              <div class="stat-number">${stat.number}</div>
+              <div class="stat-label">${stat.label}</div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // Render the model cards
+    function renderPeople(searchTerm = "") {
+      var filteredPeople = people.filter(function(person) {
+        var fullName =
+          person.firstName + " " + person.lastName;
+
+        return (
+          fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          person.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          person.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      });
+
+      resultCount.textContent =
+        filteredPeople.length + " MODEL" +
+        (filteredPeople.length === 1 ? "" : "S") +
+        " FEATURED";
+
+      if (filteredPeople.length === 0) {
+        parent.innerHTML = `
+          <div class="col-12">
+            <div class="empty-state">
+              <h3 style="font-family: 'Playfair Display', serif;">
+                No models found
+              </h3>
+              <p class="mb-0">
+                Try searching for another name or category.
+              </p>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      parent.innerHTML = filteredPeople.map(function(person, index) {
+        var fullName =
+          person.firstName + " " + person.lastName;
+
+        return `
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="model-card">
+
+              <div class="model-image">
+                <img
+                  src="${person.image}"
+                  alt="Editorial fashion portrait representing ${fullName}"
+                  loading="lazy"
+                  onerror="this.style.display='none'">
+
+                <div class="model-number">
+                  EDITION ${String(index + 1).padStart(2, "0")}
+                </div>
+
+                <div class="model-tag">
+                  ${person.category}
+                </div>
+              </div>
+
+              <div class="model-info">
+                <div class="model-years">
+                  ${person.years}
+                </div>
+
+                <h3 class="model-name">
+                  ${fullName}
+                </h3>
+
+                <div style="
+                  color: var(--pink);
+                  font-family: 'Playfair Display', serif;
+                  font-style: italic;
+                  margin-bottom: 12px;">
+                  ${person.title}
+                </div>
+
+                <p class="model-bio">
+                  ${person.description}
+                </p>
+
+                <div class="model-footer">
+                  The Supermodel Edit &nbsp; ✦
+                </div>
+              </div>
+
+            </article>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // Search by name, category, or title
+    searchInput.addEventListener("input", function() {
+      renderPeople(this.value);
+    });
+
+    // Footer year
+    document.getElementById("copyright").textContent =
+      "© " + new Date().getFullYear() +
+      " ANGELS — The Supermodel Edit";
+
+    // Initial page rendering
+    renderStatistics();
+    renderPeople();
+  </script>
+
+</body>
+</html>
